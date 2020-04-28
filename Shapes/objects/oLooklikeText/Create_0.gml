@@ -1,1 +1,0 @@
-global.enableText =  false;

@@ -1,1 +1,0 @@
-global.questionIndex += 1; 
