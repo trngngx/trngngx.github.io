@@ -59,6 +59,7 @@
         var markersOnMap = [{
                 placeInfo: "Dinghoferstr. 25",
                 placeName: "Nhà",
+                audioFile: "/assets/t-rex-roar.mp3",
                 LatLng: [{
                     lat: 48.301,
                     lng: 14.297
@@ -105,7 +106,8 @@
         function addMarkerInfo() {
             for (var i = 0; i < markersOnMap.length; i++) {
                 var contentString = '<div id="content"><h1>' + markersOnMap[i].placeName +
-                    '</h1><p></p></div>' + markersOnMap[i].placeInfo;
+                    '</h1>' + '<p>' + markersOnMap[i].placeInfo + '</p>' + 
+                    '<figure><audio controls src="' + markersOnMap[i].audioFile + '"></audio>';
 
                 const marker = new google.maps.Marker({
                     position: markersOnMap[i].LatLng[0],
