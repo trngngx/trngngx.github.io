@@ -53,11 +53,13 @@
         var map;
         var InforObj = [];
         var centerCords = {
-            lat: 48.301,
-            lng: 14.297
+            lat: 48.306,
+            lng: 14.285
         };
-        var markersOnMap = [{
+        var markersOnMap = [
+            {
                 placeInfo: "Dinghoferstr. 25",
+                placeGiDay: "abc",
                 placeName: "Nhà",
                 audioFile: "/assets/t-rex-roar.mp3",
                 LatLng: [{
@@ -65,6 +67,7 @@
                     lng: 14.297
                 }]
             },
+
             {
                 placeInfo: "Ars-Electronica-Str. 1",
                 placeName: "Ars Electronica Center",
@@ -73,6 +76,7 @@
                     lng: 14.284
                 }]
             },
+
             {
                 placeInfo: "Ars-Electronica-Str. 1",
                 placeName: "Australia (Canberra)",
@@ -81,6 +85,7 @@
                     lng: 509.109615
                 }]
             },
+
             {
                 placeInfo: "Ars-Electronica-Str. 1",
                 placeName: "Australia (Gold Coast)",
@@ -89,6 +94,7 @@
                     lng: 513.425586
                 }]
             },
+
             {
                 placeInfo: "Ars-Electronica-Str. 1",
                 placeName: "Australia (Perth)",
@@ -105,8 +111,9 @@
 
         function addMarkerInfo() {
             for (var i = 0; i < markersOnMap.length; i++) {
-                var contentString = '<div id="content"><h1>' + markersOnMap[i].placeName +
-                    '</h1>' + '<p>' + markersOnMap[i].placeInfo + '</p>' + 
+                var contentString = '<div id="content"><h3>' + markersOnMap[i].placeName +
+                    '</h3>' + '<p>' + markersOnMap[i].placeInfo + '</p>' + 
+                    '<p>' + markersOnMap[i].placeGiDay + '</p>' +
                     '<figure><audio controls src="' + markersOnMap[i].audioFile + '"></audio>';
 
                 const marker = new google.maps.Marker({
@@ -150,7 +157,7 @@
 
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
+                zoom: 14,
                 center: centerCords
             });
             addMarkerInfo();
