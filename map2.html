@@ -56,14 +56,18 @@
             lat: 48.301,
             lng: 14.297
         };
-        var markersOnMap = [{
-                placeInfo: "Dinghoferstr. 25",
+        var markersOnMap = [
+            {
                 placeName: "Nhà",
+                placeInfo: "Dinghoferstr. 25",
+                placeGiDay: "abc",
+                audioFile: "/assets/map1/t-rex-roar.mp3",
                 LatLng: [{
                     lat: 48.301,
                     lng: 14.297
                 }]
             },
+
             {
                 placeInfo: "Ars-Electronica-Str. 1",
                 placeName: "Ars Electronica Center",
@@ -72,6 +76,7 @@
                     lng: 14.284
                 }]
             },
+
             {
                 placeInfo: "Ars-Electronica-Str. 1",
                 placeName: "Australia (Canberra)",
@@ -80,6 +85,7 @@
                     lng: 509.109615
                 }]
             },
+
             {
                 placeInfo: "Ars-Electronica-Str. 1",
                 placeName: "Australia (Gold Coast)",
@@ -88,6 +94,7 @@
                     lng: 513.425586
                 }]
             },
+
             {
                 placeInfo: "Ars-Electronica-Str. 1",
                 placeName: "Australia (Perth)",
@@ -104,8 +111,10 @@
 
         function addMarkerInfo() {
             for (var i = 0; i < markersOnMap.length; i++) {
-                var contentString = '<div id="content"><h1>' + markersOnMap[i].placeName +
-                    '</h1><p></p></div>' + markersOnMap[i].placeInfo;
+                var contentString = '<div id="content"><h3>' + markersOnMap[i].placeName +
+                    '</h3>' + '<p>' + markersOnMap[i].placeInfo + '</p>' + 
+                    '<p>' + markersOnMap[i].placeGiDay + '</p>' +
+                    '<figure><audio controls src="' + markersOnMap[i].audioFile + '"></audio>';
 
                 const marker = new google.maps.Marker({
                     position: markersOnMap[i].LatLng[0],
